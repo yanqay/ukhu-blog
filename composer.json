@@ -1,0 +1,26 @@
+{
+    "name": "yanqay/ukhu-blog",
+    "description": "ukhu blog",
+    "keywords": [
+      "php",
+      "ukhu",
+      "blog"
+    ],
+    "homepage": "http://yanqay.com",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Franck Mercado",
+        "email": "franckmercado@gmail.com"
+      }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "nesbot/carbon": "^2.62"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "src/"
+      }
+    }
+}
