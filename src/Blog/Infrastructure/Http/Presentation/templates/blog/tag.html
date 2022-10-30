@@ -1,0 +1,43 @@
+{% extends "frontpage.html" %}
+
+{% block header %}
+<h1 class="display-5 line">
+    <span>Tag - {{ tag }}</span>
+</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="row">
+    {% for result in results %}
+    <div class="col-4">
+        <article>
+            <div class="small">
+                {% if result.publishDateHumanFormat %}
+                <time datetime="{{ result.publishDate }}">{{ result.publishDateHumanFormat }}</time>
+                {% endif %}
+            </div>
+            <header>
+                <h2>
+                    <a href="{{ url('/blog/article/' ~ result.filename) }}">
+                        {{ result.title }}
+                    </a>
+                </h2>
+            </header>
+            <div class="small">
+                {% if result.description %}
+                <p>{{ result.description }}</p>
+                {% endif %}
+            </div>
+        </article>
+    </div>
+    {% else %} No Posts {% endfor %}
+
+    {% if pagination.previous_page %}
+    <a href="{{ url("/blog/tag/"~ tag ~"?page=") ~ pagination.previous_page }}"><i class="bi bi-caret-left"></i> Previous Page</a>
+    {% endif %}
+    {% if pagination.next_page %}
+    <a href="{{ url("/blog/tag/"~ tag ~"?page=") ~ pagination.next_page }}">Next Page <i class="bi bi-caret-right"></i></a>
+    {% endif %}
+
+</div>
+{% endblock content %}

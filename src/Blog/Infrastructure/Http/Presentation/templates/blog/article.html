@@ -1,0 +1,52 @@
+{% extends "frontpage.html" %}
+
+{% block header %}
+<h1 class="display-5 line">
+    <span>{{article.title}}</span>
+</h1>
+{% endblock header %}
+
+{% block content %}
+<div class="crumbs">
+    <a href="{{ url("/") }}">Home</a>
+    <a href="{{ url("/blog") }}">Blog</a>
+    <span class="destination">{{article.title}}</span>
+</div>
+<article class="row">
+    <div class="col-lg-7 order-lg-first">
+        <div style="padding: 0 30px 0 0">
+            {{ article.content|raw }}
+        </div>
+    </div>
+    <div class="col-lg-5 order-first">
+        <aside class="small border-start p-5 text-dark bg-light mb-5">
+            {% if article.publishDateHumanFormat %}
+            <p>{{ article.publishDateHumanFormat }}</p>
+            {% endif %}
+            {% if article.description %}
+            <p>{{ article.description }}</p>
+            {% endif %}
+            {% if article.author %}
+            <p>Written by {{ article.author }}</p>
+            {% endif %}
+
+            {% if article.tags %}
+            {% set foo = '' %}
+            <p>Tags: 
+            {% for tag in article.getTagsInArray %}
+            <a href="{{ url("/blog/tag/") ~ tag }}">{{ foo ~ ' ' ~ tag }}</a>
+            {% endfor %}
+            </p>
+            {% endif %}
+
+            {% if article.category %}
+            <p>Category: <a href="{{ url("/blog/category/") ~ article.category }}">{{ article.category }}</a></p>
+            {% endif %}
+
+            {% if article.status %}
+            <p>Status: {{ article.status }}</p>
+            {% endif %}
+        </aside>
+    </div>
+</article>
+{% endblock content %}

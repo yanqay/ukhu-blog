@@ -1,0 +1,85 @@
+body {
+	color: #222;
+	background-color: white;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	color: inherit;
+	text-decoration: underline;
+}
+a.active {
+	font-weight: bold;
+}
+
+h1.line{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(50% - 1px), #666 calc(50%), rgba(0, 0, 0, 0) calc(50% + 1px));
+    margin: 0 0 50px 0;
+}
+h1.line span{
+    background: #ffffff;
+    display: inline-block;
+    padding: 0 50px 0 0;
+}
+
+#page-content-wrapper {
+	width: 100%;
+}
+article {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 25px;
+}
+
+/* headings */
+.home-title {
+	line-height: 0.9em;
+	letter-spacing: -20px;
+}
+.title-1 {
+	font-size: 20em;
+}
+
+.title-2 {
+	font-size: 15em;
+}
+
+.title-3 {
+	font-size: 10em;
+}
+
+/* content */
+.content {
+	display: block;
+	padding: 40px 0;
+}
+
+#wrapper {
+	overflow-x: hidden;
+}
+
+/* breadcrumb vertical */
+.crumbs {
+	font-size: 14px;
+	letter-spacing: 0.025rem;
+	position: absolute;
+	bottom: 2rem;
+	left: 2.5rem;
+	transform: rotate(-90deg);
+	transform-origin: 0 0;
+}
+.crumbs a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	display: inline-block;
+}
+.crumbs a:hover {
+	color: #666;
+}
+.crumbs a:after {
+	content: "/";
+	padding: 0 0.5rem;
+	display: inline-block;
+}
