@@ -32,11 +32,11 @@ Ukhu Blog is a blog module for [Ukhu framework](https://github.com/yanqay/ukhu)
 
 - Add Blog routes reference to application routes
 
-`$router = (require_once __DIR__ . '/../bootstrap/routes/blog.php')($router, $container);`
+    `$router = (require_once __DIR__ . '/../bootstrap/routes/blog.php')($router, $container);`
 
 - Add templates directory to $templateLocations array in bootstrap/config.php template definition
 
-`'../src/Blog/Infrastructure/Http/Presentation/templates',`
+    `'../src/Blog/Infrastructure/Http/Presentation/templates',`
 
 - Inspect git source control changes.
 
