@@ -23,11 +23,11 @@ Ukhu Blog is a blog module for [Ukhu framework](https://github.com/yanqay/ukhu)
 - Add new entry in bootstrap/config.php definitions file
 
     ```
-        \App\Blog\Application\Ports\MarkdownInterface::class => function () {
-            return new \App\Blog\Infrastructure\Adapters\MarkdownParser(
-                __DIR__ . '/../resources/blog'
-            );
-        },
+    \App\Blog\Application\Ports\MarkdownInterface::class => function () {
+        return new \App\Blog\Infrastructure\Adapters\MarkdownParser(
+            __DIR__ . '/../resources/blog'
+        );
+    },
     ```
 
 - Add Blog routes reference to application routes
